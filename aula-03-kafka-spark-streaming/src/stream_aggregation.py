@@ -40,7 +40,7 @@ def windowed_event_counts(events_df, window_duration="10 seconds"):
     grouped_df = events_df.groupBy(
         F.window(F.col("event_time"), window_duration),
         F.col("category")
-    ).count("category"),
+    ).count()
 
     return(
         grouped_df.select(
