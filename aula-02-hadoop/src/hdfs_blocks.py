@@ -67,11 +67,11 @@ def simulate_block_distribution(num_blocks: int, num_datanodes: int) -> dict:
         }
     """
     distribution = {
-        f"datanode -{i}" : [] for i in range(1, num_datanodes + 1)
+        f"datanode-{i}": [] for i in range(1, num_datanodes + 1)
     }
 
     for block_id in range(1, num_blocks + 1):
         node_index = (block_id - 1) % num_datanodes
-        distribution[f"datanode -{node_index + 1}"].append(block_id)
+        distribution[f"datanode-{node_index + 1}"].append(block_id)
 
     return distribution
